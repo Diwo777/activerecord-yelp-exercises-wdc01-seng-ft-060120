@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_06_22_185110) do
 
+  create_table "dish_tags", force: :cascade do |t|
+    t.integer "dish_id"
+    t.integer "tag_id"
+  end
+
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.integer "restaurant_id"
-  end
-
-  create_table "dishtags", force: :cascade do |t|
-    t.integer "dish_id"
-    t.integer "tag_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
